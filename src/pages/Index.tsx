@@ -5,6 +5,7 @@ import { ArrowRight, Archive, Clock, BookOpen } from 'lucide-react';
 import { Layout } from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
+import archAradLogo from '@/assets/archarad-logo.png';
 
 const Index: React.FC = () => {
   const { t } = useLanguage();
@@ -43,12 +44,24 @@ const Index: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="max-w-3xl mx-auto text-center space-y-8"
           >
+            {/* Logo */}
+            <Link to="/" className="inline-block">
+              <motion.img
+                src={archAradLogo}
+                alt="ArchArad - Digital Archive of Arad"
+                className="h-28 sm:h-32 md:h-36 lg:h-40 w-auto mx-auto hover:scale-105 transition-transform duration-300"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+              />
+            </Link>
+
             {/* Decorative Element */}
-            <div className="flex justify-center">
+            <div className="flex justify-center pt-2">
               <div className="w-24 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
             </div>
 
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight">
+            <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight">
               {t('home.title')}
             </h1>
 
